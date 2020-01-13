@@ -14,6 +14,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <dockerfile-maven-version>1.4.13</dockerfile-maven-version>
     </properties>
 <build>
     <pluginManagement>
@@ -43,16 +44,37 @@
                 <tagNameFormat>v@{project.version}</tagNameFormat>
             </configuration>
         </plugin>
+        <plugin>
+            <groupId>com.spotify</groupId>
+            <artifactId>dockerfile-maven-plugin</artifactId>
+            <version>${dockerfile-maven-version}</version>
+            <executions>
+                <execution>
+                    <id>default</id>
+                    <goals>
+                        <goal>build</goal>
+                        <goal>push</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <repository>irfanansari/hello-world</repository>
+                <tag>${project.version}</tag>
+                <buildArgs>
+                    <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+                </buildArgs>
+            </configuration>
+        </plugin>
     </plugins>
 
 </build>
 
-    <scm>
-        <url>https://github.com/IrfanAnsari/spring-boot-hello-world</url>
-        <connection>scm:git@github.com/IrfanAnsari/spring-boot-hello-world</connection>
-        <developerConnection>scm:git:https://github.com/IrfanAnsari/spring-boot-hello-world</developerConnection>
-        <tag>HEAD</tag>
-    </scm>
+<scm>
+    <url>https://github.com/IrfanAnsari/spring-boot-hello-world</url>
+    <connection>scm:git@github.com/IrfanAnsari/spring-boot-hello-world</connection>
+    <developerConnection>scm:git:https://github.com/IrfanAnsari/spring-boot-hello-world</developerConnection>
+    <tag>HEAD</tag>
+</scm>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
