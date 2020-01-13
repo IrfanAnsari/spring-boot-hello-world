@@ -61,12 +61,12 @@
 
     <distributionManagement>
         <repository>
-            <id>localrepo</id>
-            <url>http://localhost:8081/nexus/content/repositories/localrepo</url>
+            <id>Releases</id>
+            <url>http://localhost:8081/nexus/content/repositories/releases/</url>
         </repository>
         <snapshotRepository>
-            <id>LocalSnapshotRepo</id>
-            <url>http://localhost:8081/nexus/content/repositories/LocalSnapshotRepo</url>
+            <id>Snapshots</id>
+            <url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
