@@ -58,12 +58,12 @@
                 </execution>
             </executions>
             <configuration>
-                <repository>docker-registery/hello-world</repository>
+                <useMavenSettingsForAuth>true</useMavenSettingsForAuth>
+                <repository>docker-registry/hello-world</repository>
                 <tag>${project.version}</tag>
                 <buildArgs>
                     <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
                 </buildArgs>
-
             </configuration>
         </plugin>
     </plugins>
