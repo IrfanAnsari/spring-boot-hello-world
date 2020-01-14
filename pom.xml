@@ -59,7 +59,7 @@
             </executions>
             <configuration>
                 <useMavenSettingsForAuth>true</useMavenSettingsForAuth>
-                <repository>irfanansari/hello-world</repository>
+                <repository>irfanansari/spring-boot-hello-world</repository>
                 <tag>${project.version}</tag>
                 <buildArgs>
                     <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
